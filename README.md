@@ -6,7 +6,7 @@ $ cd jira-statistics
 $ npm install
 $ node app.js
 ```
-## If not installed node
+## How install Node.js
 ### Linux
 ```
 $ sudo apt-get install nodejs nodejs-dev npm
@@ -16,3 +16,4 @@ $ sudo apt-get install nodejs nodejs-dev npm
 ```
 $ brew install node
 ```
+
