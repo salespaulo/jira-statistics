@@ -2,7 +2,8 @@ var express = require('express');
 var parser  = require('body-parser');
 var api     = require('./client/api');
 
-var app     = express();
+var app  = express();
+var port = (process.env.PORT || 3000);
 
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
@@ -14,6 +15,6 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 
 app.post('/api/login', api.login);
 
-app.listen((process.env.PORT || 3000), function () {
-  console.log('Example app listening on port 3000!');
+app.listen(port, function () {
+  console.log('Jira Statistics listening on ' + port + '!');
 });

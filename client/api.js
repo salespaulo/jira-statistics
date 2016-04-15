@@ -16,7 +16,7 @@ function build_url(path) {
 function extract(req) {
   url = req.body.url;
 
-	login = {
+  login = {
     username: req.body.user,
     password: req.body.passwd
   };
