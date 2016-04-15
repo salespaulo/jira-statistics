@@ -28,6 +28,8 @@
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
     "jquery": "^2.2.3",
-    "request": "^2.71.0"
+    "request": "^2.71.0",
+    "grunt-cli": "~1.2.0",
+    "grunt": "~1.0.1"
   }
 }
