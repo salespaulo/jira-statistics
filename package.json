@@ -1,7 +1,7 @@
 {
   "name": "jira-statistics",
   "version": "1.0.0",
-  "description": "Real-time Jira Statistics",
+  "description": "Jira Statistics",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,10 +24,12 @@
   },
   "homepage": "https://github.com/salespaulo/jira-statistics#readme",
   "dependencies": {
-    "body-parser": "^1.15.0",
+    "body-parser": "~1.15.0",
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
     "jquery": "^2.2.3",
-    "request": "^2.71.0"
+    "request": "~2.71.0",
+    "ejs": "~2.4.1",
+    "bootstrap-datepicker": "~1.6.0"
   }
 }

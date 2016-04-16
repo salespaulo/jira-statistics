@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>
+          Jira Statistics
+      </a>
+    </div>
+    <ul class="nav navbar-nav">
+       <li><a href="/">Login</a></li>
+       <li><a href="/about">About</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a><b>user:</b> <%= auth.username ? auth.username : 'unknown' %></a></li>
+      <li><a><b>session:</b> <%= session ? session : 'unknown' %></a></li>
+      <li><a><b>count:</b> <%= login.count ? login.count : 'unknown' %></a></li>
+    </ul>
+  </div>
+</nav>
