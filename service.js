@@ -32,7 +32,7 @@ var auth = function(req, res) {
   api.login(auth_data.url, auth_in, function(err, auth_out) {
     if (err) res.render('pages/error', err);
     else {
-      auth_data.session = auth_data.session.value;
+      auth_data.session = auth_data.session.name + '=' + auth_data.session.value;
       auth_data.login.count = auth_out.loginInfo.loginCount;
       res.render('pages/index', auth_data);
     }
