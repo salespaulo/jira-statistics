@@ -26,10 +26,11 @@
   "dependencies": {
     "body-parser": "~1.15.0",
     "bootstrap": "^3.3.6",
+    "bootstrap-datepicker": "~1.6.0",
+    "ejs": "~2.4.1",
     "express": "^4.13.4",
     "jquery": "^2.2.3",
-    "request": "~2.71.0",
-    "ejs": "~2.4.1",
-    "bootstrap-datepicker": "~1.6.0"
+    "quiche": "0.0.10",
+    "request": "~2.71.0"
   }
 }

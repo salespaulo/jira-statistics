@@ -1,4 +1,4 @@
-var api = require('./api');
+var api = require('../api/jira');
 
 var auth_data = {
   url: '',
@@ -12,6 +12,7 @@ var auth_data = {
   }
 };
 
+/* private */
 function auth_in_api(req) {
   auth_data.url  = req.body.url;
   auth_data.auth = {
@@ -22,6 +23,7 @@ function auth_in_api(req) {
   return auth_data.auth;
 };
 
+/* public */
 var login = function login(req, res) {
   res.render('pages/login', auth_data);
 };
