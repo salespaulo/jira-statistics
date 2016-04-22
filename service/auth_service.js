@@ -29,16 +29,17 @@ var login = function login(req, res) {
 };
 
 var auth = function(req, res) {
-  var auth_in = auth_in_api(req);
-
-  api.login(auth_data.url, auth_in, function(err, auth_out) {
-    if (err) res.render('pages/error', err);
-    else {
-      auth_data.session = auth_data.session.name + '=' + auth_data.session.value;
-      auth_data.login.count = auth_out.loginInfo.loginCount;
       res.render('pages/index', auth_data);
-    }
-  });
+  // var auth_in = auth_in_api(req);
+
+  // api.login(auth_data.url, auth_in, function(err, auth_out) {
+  //   if (err) res.render('pages/error', err);
+  //   else {
+  //     auth_data.session = auth_data.session.name + '=' + auth_data.session.value;
+  //     auth_data.login.count = auth_out.loginInfo.loginCount;
+  //     res.render('pages/index', auth_data);
+  //   }
+  // });
 };
 
 var filter = function(req, res) {
