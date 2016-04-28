@@ -8,9 +8,7 @@
       <div class="page-header">
         <h2>Opsss...</h2>
       </div>
-      <div class="alert alert-danger" role="alert">
-        <span>Error: <%=code%></span>
-        <%-message%>
+      <div id="div-errors">
       </div>
       <div class="pull-left">
         <a href="/">Return to home page</a>
@@ -19,5 +17,22 @@
     <footer>
       <% include ../tmpl/footer %>
     </footer>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var message = <%- JSON.stringify(message) %>;
+        var code = <%= code %>;
+        var html = function (i, code, error) {
+          return '<div class="alert alert-danger" role="alert">' +
+                 '  <span><b>Code:</b> ' + code + ' | <b>Error[' + i + ']:</b> ' + error + '</span>' +
+                 '</div>';
+        };
+
+        if (message === Object(message)) {
+          $('#div-errors').html(html(1, code, JSON.stringify(message)));
+        } else {
+          $('#div-errors').html(html(1, code, message));
+        }
+      });
+    </script>
   </body>
 </html>

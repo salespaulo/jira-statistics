@@ -11,8 +11,8 @@ var login = function(url, auth_in, callback) {
     agentOptions: {
       rejectUnauthorized: false
     }}, function(err, res, body) {
-      if (res.statusCode == 200 && callback) callback({code:-1, message: err });
-      else if (err && callback) callback(false, body);
+      if (err && callback) callback({code:-1, message: err });
+      else if (res.statusCode == 200 && callback) callback(false, body);
       else if (callback) callback({code: res.statusCode, message: body});
     });
 };
