@@ -1,4 +1,4 @@
-var api = require('./api');
+var api = require('../api/jira');
 
 var auth_data = {
   url: '',
@@ -12,6 +12,7 @@ var auth_data = {
   }
 };
 
+/* private */
 function auth_in_api(req) {
   auth_data.url  = req.body.url;
   auth_data.auth = {
@@ -22,21 +23,23 @@ function auth_in_api(req) {
   return auth_data.auth;
 };
 
+/* public */
 var login = function login(req, res) {
   res.render('pages/login', auth_data);
 };
 
 var auth = function(req, res) {
-  var auth_in = auth_in_api(req);
-
-  api.login(auth_data.url, auth_in, function(err, auth_out) {
-    if (err) res.render('pages/error', err);
-    else {
-      auth_data.session = auth_data.session.value;
-      auth_data.login.count = auth_out.loginInfo.loginCount;
       res.render('pages/index', auth_data);
-    }
-  });
+  // var auth_in = auth_in_api(req);
+
+  // api.login(auth_data.url, auth_in, function(err, auth_out) {
+  //   if (err) res.render('pages/error', err);
+  //   else {
+  //     auth_data.session = auth_data.session.name + '=' + auth_data.session.value;
+  //     auth_data.login.count = auth_out.loginInfo.loginCount;
+  //     res.render('pages/index', auth_data);
+  //   }
+  // });
 };
 
 var filter = function(req, res) {
