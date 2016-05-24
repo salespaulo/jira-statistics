@@ -28,7 +28,7 @@ app.use('/locales', express.static(__dirname + '/node_modules/bootstrap-datepick
 // Dynamic routes
 app.get('/', auth_service.login);
 app.post('/auth', auth_service.auth);
-app.post('/stats/filter', stats_service.statusIssues);
+app.post('/stats/filter', stats_service.status);
 app.get('/about', function(res) {
   res.render('About!!! :D :D :D :D');
 });
